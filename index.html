@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <title>A-Frame DOM Manipulation</title>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+</head>
+
+  <body>
+      <!--beginning of the 3D scene!-->
+      <a-scene id="scene">
+          <a-assets id="assets">
+              <img id="skyTexture" crossorigin="anonymous" src="https://c2.staticflickr.com/2/1557/23736336593_3c1ecc0fbd_b.jpg">
+          </a-assets>
+
+
+          <!--sets the background color of the sky-->
+          <a-sky color="aliceblue" src="#skyTexture" radius="100"></a-sky>
+
+          <!--the cursor allows us to click on things! It has to move with the camera, which has to be inside of an a-entity tag.-->
+          <a-entity>
+              <a-camera>
+                  <a-cursor></a-cursor>
+              </a-camera>
+          </a-entity>
+
+          <!--sphere-->
+          <a-sphere id="protoSphere" scale="0.5 0.5 0.5" color="tomato" position="0 1.5 -5" width="1">
+
+          </a-sphere>
+
+          <!-- Container for objects we create later -->
+          <a-entity id="container">
+
+          </a-entity>
+
+
+
+
+          <!--sets the lighting for the scene-->
+          <a-light type="ambient" color="#445451"></a-light>
+          <a-light type="point" intensity="2" position="2 4 4"></a-light>
+
+      </a-scene>
+      <script type="text/javascript" src="script2.js"></script>
+  </body>
+
+</html>
