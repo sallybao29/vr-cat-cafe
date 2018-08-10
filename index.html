@@ -11,7 +11,11 @@
       <!--beginning of the 3D scene!-->
       <a-scene id="scene">
           <a-assets id="assets">
-              <img id="walls" src="https://farm5.static.flickr.com/4513/37331438734_3f1bbf3c0f_b.jpg">
+              <img id="walls" src="images/kittenwallpaper.jpg">
+              <img id="floor" src="images/floor.jpg">
+             <img id="window" src="images/window.jpg">
+
+
               <a-asset id="cat1" src="https://poly.google.com/view/3NujIPTNqDP"></a-asset>
               <a-asset id="cat2" src="https://poly.google.com/view/6dM1J6f6pm9"></a-asset>
               <a-asset id="cat3" src="https://poly.google.com/view/4fb-oMr2uUF"></a-asset>
@@ -29,7 +33,17 @@
           </a-entity>
           
           <!--- Floor ---->
-          <a-plane position="0 0 0" rotation="-90 0 0" width="8" height="8" color="tomato"></a-plane>
+          <a-plane position="0 0 0" rotation="-90 0 0" width="8" height="8" src="#floor"></a-plane>
+
+          
+          <!--- Walls ---->
+          <a-plane position="4 2 0" rotation="0 -90 0" width="8" height="4" src="#walls"></a-plane>
+          <a-plane position="-4 2 0" rotation="0  90 0" width="8" height="4" src="#walls"></a-plane>
+          <a-plane position="0 2 -4" rotation="0 0 0" width="8" height="4" src="#walls"></a-plane>
+          <a-plane position="0 2 4" rotation="180 0 0" width="8" height="4" src="#walls"></a-plane>
+
+          <!-- Window. -->
+          <a-box position="0 2 4" depth=".01" height="2.8" width="5" src="#window"></a-box>
           
           <!--- Tray ----->
           <a-entity id="food-tray" gblock="#plate" position="-0.5 -1.2 -1" scale="1.1 1.1 1.1">
@@ -59,7 +73,7 @@
             
             <!--sets the lighting for the scene-->
           <a-light type="ambient" color="#445451"></a-light>
-          <a-light type="point" intensity="2" position="2 4 4"></a-light>
+          <a-light type="point" intensity="1" position="0 2 3.5"></a-light>
       </a-scene>
       <script type="text/javascript" src="script.js"></script>
   </body>
