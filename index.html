@@ -43,14 +43,12 @@
           <a-box position="0 2 4" depth=".01" height="2.8" width="5" src="#window"></a-box>
           
           <!--- Tray ----->
-          <a-entity id="food-tray" gblock="#plate" position="-0.5 -1.2 -1" scale="1.1 1.1 1.1">
-            
-          </a-entity>
+          <a-entity static-body id="food-tray" gblock="#plate" position="-0.5 -1.2 -1" scale="1.1 1.1 1.1"> </a-entity>
          
           
           <!--- Cats ---->
           <a-entity>
-            <a-entity dynamic-body="mass: 5; shape: auto" class="cat" scale=".5 .5 .5" position="-.72 -.4 -1.06" gblock="#cat1" id="OG kitten"></a-entity>
+            <a-entity dynamic-body="mass: 5; shape: auto" class="cat" scale=".5 .5 .5" position="-.72 0 -1.06" gblock="#cat1" id="OG kitten"></a-entity>
           </a-entity>
           
           <a-entity>
@@ -62,7 +60,7 @@
           </a-entity>
           
           <a-entity>
-            <a-entity scale=".2 .2 .2" position="2.89 0 2.886" gblock="#plant1" id="plant"></a-entity>
+            <a-entity static-body scale=".2 .2 .2" position="2.89 0 2.886" gblock="#plant1" id="plant"></a-entity>
           </a-entity>
          
          

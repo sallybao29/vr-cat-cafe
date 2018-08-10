@@ -25,6 +25,7 @@ function setup() {
             //catActions[getRandomInt(0, catActions.length)](e.target);
             jump(e.target);
             //twirl(e.target);
+            //wander(e.target);
         });
         //cat.setAttribute("velocity", {x: 0, y: 0, z: 0.5});
     });
@@ -80,7 +81,9 @@ function jump(cat) {
 
 function wander(cat) {
     let speed = getRandomFloat(0.5, 2);
+    let rotation = cat.body.rotation;
     
+    cat.setAttribute("velocity", {x: speed, y: 0, z: 0});
 }
 
 function twirl(cat) {
