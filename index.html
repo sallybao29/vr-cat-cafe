@@ -9,7 +9,7 @@
 
   <body>
       <!--beginning of the 3D scene!-->
-      <a-scene id="scene" physics="debug: true">
+      <a-scene id="scene" physics="debug: false">
           <a-assets id="assets">
               <img id="walls" src="https://farm5.static.flickr.com/4513/37331438734_3f1bbf3c0f_b.jpg">
               <a-asset id="cat1" src="https://poly.google.com/view/3NujIPTNqDP"></a-asset>
@@ -39,15 +39,15 @@
           
           <!--- Cats ---->
           <a-entity>
-            <a-entity class="cat" scale=".5 .5 .5" position="-.72 -.4 -1.06" gblock="#cat1" id="OG kitten"></a-entity>
+            <a-entity dynamic-body="mass: 5; shape: auto" class="cat" scale=".5 .5 .5" position="-.72 -.4 -1.06" gblock="#cat1" id="OG kitten"></a-entity>
           </a-entity>
           
           <a-entity>
-            <a-entity class="cat" scale="0.01 .01 .01" position="0 .418 0" gblock="#cat2" id="ugly cat"></a-entity>
+            <a-entity dynamic-body="mass: 3; shape: auto" class="cat" scale="0.01 .01 .01" position="0 .418 0" gblock="#cat2" id="ugly cat"></a-entity>
           </a-entity>
           
           <a-entity>
-             <a-entity class="cat" scale=".1 .1 .1"  rotation="0 100 0" position="-.42 .008 1.149" gblock="#cat3" id="jaguar"></a-entity>
+             <a-entity dynamic-body="mass: 8; shape: auto" class="cat" scale=".1 .1 .1" position="-.42 .008 1.149" gblock="#cat3" id="jaguar"></a-entity>
           </a-entity>
           
           <a-entity>

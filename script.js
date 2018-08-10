@@ -15,17 +15,20 @@ function setup() {
     cats.forEach(cat => {
         console.log("foreach");
         cat.setAttribute("sound", "src: #meow");
+        let rotation = getRandomFloat(0, 361);
+        cat.setAttribute("rotation", {x: 0, y: rotation, z: 0});
+        // Attach event listeners
         cat.parentNode.addEventListener("click", (e) => {
             e.preventDefault();
             meow(e);
             // Pick a random action for the target cat to take
             //catActions[getRandomInt(0, catActions.length)](e.target);
-            //jump(e.target);
-            twirl(e.target);
+            jump(e.target);
+            //twirl(e.target);
         });
+        //cat.setAttribute("velocity", {x: 0, y: 0, z: 0.5});
     });
     makeFood();
-    //tray.addEventListener("click", follow);
 }
 
 function meow(e) {
@@ -63,16 +66,21 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
 }
 
+function getRandomFloat(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
 function jump(cat) {
-    let pos = cat.object3D.position;
-    cat.innerHTML = `"<a-animation 
-                attribute="position"
-                dur="200"
-                fill="forwards"
-                to="${pos.x} ${pos.y + 0.05} ${pos.z}"
-                repeat="1"
-                direction="alternate">
-                </a-animation>"`;
+    let yVel = getRandomFloat(1, 5);
+    cat.body.applyLocalImpulse(
+        new CANNON.Vec3(0, yVel, 0),
+        new CANNON.Vec3(0, 0, 0).copy(cat.body.position)
+    );
+}
+
+function wander(cat) {
+    let speed = getRandomFloat(0.5, 2);
+    
 }
 
 function twirl(cat) {
